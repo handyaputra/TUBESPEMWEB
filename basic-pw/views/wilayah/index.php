@@ -1,0 +1,40 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+
+/* @var $this yii\web\View */
+/* @var $searchModel app\models\WilayahSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Wilayah';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="wilayah-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a('Create Wilayah', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id_wilayah',
+            'nama_prov',
+            'wid_kab',
+            'wid_kec',
+            'wid_kel',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+
+</div>
